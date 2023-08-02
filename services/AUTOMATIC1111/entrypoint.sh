@@ -38,6 +38,13 @@ MOUNTS["${ROOT}/config_states"]="/data/config/auto/config_states"
 # extra hacks
 MOUNTS["${ROOT}/repositories/CodeFormer/weights/facelib"]="/data/.cache"
 
+if [ -f "/data/config/auto/pre_startup.sh" ]; then
+  pushd ${ROOT}
+  echo "Running pre_startup script"
+  . /data/config/auto/pre_startup.sh
+  popd
+fi
+
 for to_path in "${!MOUNTS[@]}"; do
   set -Eeuo pipefail
   from_path="${MOUNTS[${to_path}]}"
