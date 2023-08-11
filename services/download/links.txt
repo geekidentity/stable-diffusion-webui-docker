@@ -14,3 +14,61 @@ https://heibox.uni-heidelberg.de/f/31a76b13ea27482981b4/?dl=1
   out=LDSR/project.yaml
 https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
   out=LDSR/model.ckpt
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/README.md
+  out=ControlNet/README.md
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.pth
+  out=ControlNet/control_v11e_sd15_ip2p.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.yaml
+  out=ControlNet/control_v11e_sd15_ip2p.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle.pth
+  out=ControlNet/control_v11e_sd15_shuffle.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle.yaml
+  out=ControlNet/control_v11e_sd15_shuffle.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
+  out=ControlNet/control_v11f1e_sd15_tile.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.yaml
+  out=ControlNet/control_v11f1e_sd15_tile.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
+  out=ControlNet/control_v11f1p_sd15_depth.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.yaml
+  out=ControlNet/control_v11f1p_sd15_depth.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth
+  out=ControlNet/control_v11p_sd15_canny.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.yaml
+  out=ControlNet/control_v11p_sd15_canny.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth
+  out=ControlNet/control_v11p_sd15_inpaint.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.yaml
+  out=ControlNet/control_v11p_sd15_inpaint.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth
+  out=ControlNet/control_v11p_sd15_lineart.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.yaml
+  out=ControlNet/control_v11p_sd15_lineart.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd.pth
+  out=ControlNet/control_v11p_sd15_mlsd.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd.yaml
+  out=ControlNet/control_v11p_sd15_mlsd.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae.pth
+  out=ControlNet/control_v11p_sd15_normalbae.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae.yaml
+  out=ControlNet/control_v11p_sd15_normalbae.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth
+  out=ControlNet/control_v11p_sd15_openpose.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.yaml
+  out=ControlNet/control_v11p_sd15_openpose.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth
+  out=ControlNet/control_v11p_sd15_scribble.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.yaml
+  out=ControlNet/control_v11p_sd15_scribble.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth
+  out=ControlNet/control_v11p_sd15_seg.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.yaml
+  out=ControlNet/control_v11p_sd15_seg.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth
+  out=ControlNet/control_v11p_sd15_softedge.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.yaml
+  out=ControlNet/control_v11p_sd15_softedge.yaml
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15s2_lineart_anime.pth
+  out=ControlNet/control_v11p_sd15s2_lineart_anime.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15s2_lineart_anime.yaml
+  out=ControlNet/control_v11p_sd15s2_lineart_anime.yaml
