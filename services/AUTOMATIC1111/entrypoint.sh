@@ -2,6 +2,13 @@
 
 set -Eeuo pipefail
 
+if [ -f "/data/config/auto/pre_startup.sh" ]; then
+  pushd ${ROOT}
+  echo "Running pre_startup script"
+  . /data/config/auto/pre_startup.sh
+  popd
+fi
+
 # TODO: move all mkdir -p ?
 mkdir -p /data/config/auto/scripts/
 # mount scripts individually
@@ -25,6 +32,7 @@ rsync -a --info=NAME ${ROOT}/models/karlo/ /data/models/karlo/
 
 declare -A MOUNTS
 
+MOUNTS["/root/.ifnude"]="/data/.ifnude"
 MOUNTS["/root/.cache"]="/data/.cache"
 MOUNTS["${ROOT}/models"]="/data/models"
 
@@ -37,13 +45,6 @@ MOUNTS["${ROOT}/config_states"]="/data/config/auto/config_states"
 
 # extra hacks
 MOUNTS["${ROOT}/repositories/CodeFormer/weights/facelib"]="/data/.cache"
-
-if [ -f "/data/config/auto/pre_startup.sh" ]; then
-  pushd ${ROOT}
-  echo "Running pre_startup script"
-  . /data/config/auto/pre_startup.sh
-  popd
-fi
 
 for to_path in "${!MOUNTS[@]}"; do
   set -Eeuo pipefail
