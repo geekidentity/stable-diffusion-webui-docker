@@ -29,9 +29,11 @@ services:
     <<: *base_service
     profiles: ["auto"]
     build: ./services/AUTOMATIC1111
-    image: sd-webui:1.5.1
+    image: sd-webui:1.6.0
     environment:
       - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api
+      - http_proxy=http://192.168.31.120:7890
+      - https_proxy=http://192.168.31.120:7890
 
   auto-cpu:
     <<: *automatic
@@ -71,3 +73,4 @@ services:
     deploy: {}
     environment:
       - CLI_ARGS=--cpu
+

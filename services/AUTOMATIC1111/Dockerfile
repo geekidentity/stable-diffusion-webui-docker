@@ -2,18 +2,15 @@ FROM alpine/git:2.36.2 as download
 
 COPY clone.sh /clone.sh
 
-RUN . /clone.sh taming-transformers https://github.xxlab.tech/https://github.com/CompVis/taming-transformers.git 24268930bf1dce879235a7fddd0b2355b84d7ea6 \
-  && rm -rf data assets **/*.ipynb
-
-RUN . /clone.sh stable-diffusion-stability-ai https://github.xxlab.tech/https://github.com/Stability-AI/stablediffusion.git 47b6b607fdd31875c9279cd2f4f16b92e4ea958e \
+RUN . /clone.sh stable-diffusion-stability-ai https://github.xxlab.tech/https://github.com/Stability-AI/stablediffusion.git cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf \
   && rm -rf assets data/**/*.png data/**/*.jpg data/**/*.gif
 
 RUN . /clone.sh CodeFormer https://github.xxlab.tech/https://github.com/sczhou/CodeFormer.git c5b4593074ba6214284d6acd5f1719b6c5d739af \
   && rm -rf assets inputs
 
 RUN . /clone.sh BLIP https://github.xxlab.tech/https://github.com/salesforce/BLIP.git 48211a1594f1321b00f14c9f7a5b4813144b2fb9
-RUN . /clone.sh k-diffusion https://github.xxlab.tech/https://github.com/crowsonkb/k-diffusion.git 5b3af030dd83e0297272d861c19477735d0317ec
-RUN . /clone.sh clip-interrogator https://github.xxlab.tech/https://github.com/pharmapsychotic/clip-interrogator 2486589f24165c8e3b303f84e9dbbea318df83e8
+RUN . /clone.sh k-diffusion https://github.xxlab.tech/https://github.com/crowsonkb/k-diffusion.git ab527a9a6d347f364e3d185ba6d714e22d80cb3c
+RUN . /clone.sh clip-interrogator https://github.xxlab.tech/https://github.com/pharmapsychotic/clip-interrogator 2cf03aaf6e704197fd0dae7c7f96aa59cf1b11c9
 RUN . /clone.sh generative-models https://github.xxlab.tech/https://github.com/Stability-AI/generative-models 45c443b316737a4ab6e40413d7794a7f5657c19f
 
 FROM alpine:3.17 as xformers
@@ -43,7 +40,7 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.xxlab.tech/https://github.com/AUTOMATIC1111/stable-diffusion-webui.git && \
   cd stable-diffusion-webui && \
-  git reset --hard 68f336bd994bed5442ad95bad6b6ad5564a5409a && \
+  git reset --hard 5ef669de080814067961f28357256e8fe27544f4 && \
   pip install -r requirements_versions.txt && \
   pip install --upgrade gradio==3.36.1
 
@@ -55,7 +52,7 @@ ENV ROOT=/stable-diffusion-webui
 
 
 COPY --from=download /repositories/ ${ROOT}/repositories/
-RUN mkdir ${ROOT}/interrogate && cp ${ROOT}/repositories/clip-interrogator/data/* ${ROOT}/interrogate
+RUN mkdir ${ROOT}/interrogate && cp ${ROOT}/repositories/clip-interrogator/clip_interrogator/data/* ${ROOT}/interrogate
 RUN --mount=type=cache,target=/root/.cache/pip \
   pip install -r ${ROOT}/repositories/CodeFormer/requirements.txt
 
@@ -72,7 +69,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN apt-get -y install libgoogle-perftools-dev && apt-get clean
 ENV LD_PRELOAD=libtcmalloc.so
 
-ARG SHA=68f336bd994bed5442ad95bad6b6ad5564a5409a
+ARG SHA=5ef669de080814067961f28357256e8fe27544f4
 RUN --mount=type=cache,target=/root/.cache/pip \
   cd stable-diffusion-webui && \
   git fetch && \
@@ -88,6 +85,8 @@ RUN \
   # one of the ugliest hacks I ever wrote \
   sed -i 's/in_app_dir = .*/in_app_dir = True/g' /usr/local/lib/python3.10/site-packages/gradio/routes.py && \
   git config --global --add safe.directory '*'
+
+RUN /usr/local/bin/python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple chardet fastapi PyExecJS lxml tqdm pathos cryptography openai boto3 aliyun-python-sdk-core aliyun-python-sdk-alimt
 
 WORKDIR ${ROOT}
 ENV NVIDIA_VISIBLE_DEVICES=all
